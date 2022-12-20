@@ -1,2 +1,3 @@
 # codecrafters-redis-rust
-Simple Redis Implementation in Rust
+
+### This repo is a simple Redis implementation in Rust following their [Build your own Reids](https://app.codecrafters.io/tracks/rust).The code is heavily influenced, and parts of it are taken from [Miguel Piedrafita's](https://github.com/m1guelpf/lil-redis) implementation of the same challenge.Over all an enjoyable challenge that was a great introduction to Rust once you learn the basics!

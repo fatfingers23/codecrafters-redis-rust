@@ -23,13 +23,13 @@ impl CommandType {
     }
 
     pub fn handle_command(&self, args: Vec<&RESPType>, cache: &mut Arc<Mutex<Cache>>) -> Vec<u8> {
-        let hard_coded = "+PONG\r\n";
+
         let mut unlocked_cache: MutexGuard<Cache> = cache.lock().unwrap();
         println!("Args: {:?}", args);
         match self {
             Self::Ping | Self::Echo => {
                 if args.len() == 0 {
-                    return hard_coded.as_bytes().to_vec();
+                    return RESPType::SimpleString("PONG".to_string()).pack();
                 }
                 let args = args.get(0).unwrap();
                 return args.pack();
@@ -90,7 +90,7 @@ impl CommandType {
                 return result.pack();
             }
             _ => {
-                return hard_coded.as_bytes().to_vec();
+                return RESPType::Error("That command has not been setup.".to_string()).pack();
             }
         }
     }

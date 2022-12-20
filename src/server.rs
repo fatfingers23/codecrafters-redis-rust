@@ -69,7 +69,6 @@ impl Server {
                                 Ok(_) => continue,
                                 Err(e) => {
                                     eprintln!("error writing to the stream: {}", e);
-                                    stream.shutdown(std::net::Shutdown::Both).unwrap();
                                     break;
                                 }
                             };
