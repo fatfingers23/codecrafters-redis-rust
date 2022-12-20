@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "cargo",
+            "name": "start",
+            "cargoArgs": [
+                "run",
+                "--quiet",
+                "--release",
+                "--target-dir=/tmp/codecrafters-redis-target"
+            ],
+        },
+        {
+        "type": "cargo",
+        "name": "test",
+        "cargoArgs": [
+            "test"
+        ],
+    },
+    ]
+}
